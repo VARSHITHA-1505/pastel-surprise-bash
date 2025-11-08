@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import videoSparkle from "@/assets/videosparkle.mp4";
+import video2 from "@/assets/video2.mp4";
 
 interface BackgroundVideoSectionProps {
   onNext: () => void;
@@ -21,7 +21,7 @@ const BackgroundVideoSection = ({ onNext }: BackgroundVideoSectionProps) => {
               className="w-full h-auto rounded-2xl"
               poster=""
             >
-              <source src={videoSparkle} type="video/mp4" />
+              <source src={video2} type="video/mp4" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute -inset-4 bg-gradient-to-r from-pink-300/30 via-purple-300/30 to-blue-300/30 blur-3xl -z-10" />

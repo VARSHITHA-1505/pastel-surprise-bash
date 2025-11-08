@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Card } from "@/components/ui/card";
 
-const letterText = `Dear Friend,
+const letterText = `Dear LOVE,
 
 On this special day, I just want to remind you how precious you are to everyone around you. Your smile lights up every room, your kindness touches every heart, and your presence makes the world a better place.
 

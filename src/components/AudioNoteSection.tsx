@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -29,7 +30,7 @@ const AudioNoteSection = ({ onNext }: AudioNoteSectionProps) => {
                   filter: 'hue-rotate(320deg) saturate(1.2)',
                 }}
               >
-                <source src="" type="audio/mpeg" />
+                <source src="/audio/audio.mp3" type="audio/mpeg" />
                 Your browser does not support the audio element.
               </audio>
             </div>

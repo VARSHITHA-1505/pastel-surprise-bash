@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import memory1 from "@/assets/memory1.jpg";
-import memory2 from "@/assets/memory2.jpg";
-import memory3 from "@/assets/memory3.jpg";
-import memory4 from "@/assets/memory4.jpg";
-import memory5 from "@/assets/memory5.jpg";
-import memory6 from "@/assets/memory6.jpg";
+import i1 from "@/assets/i1.jpg";
+import i2 from "@/assets/i2.jpg";
+import i3 from "@/assets/i3.jpg";
+import i4 from "@/assets/i4.jpg";
+import i5 from "@/assets/i5.jpg";
+import i6 from "@/assets/i6.jpg";
 
 interface MemoriesGridProps {
   onNext: () => void;
 }
 
 const memories = [
-  { id: 1, image: memory1, caption: "Beautiful moments" },
-  { id: 2, image: memory2, caption: "Cherished memories" },
-  { id: 3, image: memory3, caption: "Happy times" },
-  { id: 4, image: memory4, caption: "Wonderful days" },
-  { id: 5, image: memory5, caption: "Special occasions" },
-  { id: 6, image: memory6, caption: "Forever treasured" },
+  { id: 1, image: i1, caption: "Beautiful moments" },
+  { id: 2, image: i2, caption: "Cherished memories" },
+  { id: 3, image: i3, caption: "Happy times" },
+  { id: 4, image: i4, caption: "Wonderful days" },
+  { id: 5, image: i5, caption: "Special occasions" },
+  { id: 6, image: i6, caption: "Forever treasured" },
 ];
 
 const MemoriesGrid = ({ onNext }: MemoriesGridProps) => {
@@ -53,9 +53,10 @@ const MemoriesGrid = ({ onNext }: MemoriesGridProps) => {
           <Button 
             onClick={onNext}
             size="lg"
-            className="px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-accent hover:bg-accent/90"
+          className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-pink-500 hover:bg-pink-600"
+
           >
-            Next → Special Letter 💌
+            Next → Special Moment 💌
           </Button>
         </div>
       </div>

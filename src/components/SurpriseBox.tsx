@@ -60,7 +60,8 @@ const SurpriseBox = ({ onNext }: SurpriseBoxProps) => {
             <Button 
               onClick={handleOpen}
               size="lg"
-              className="px-12 py-8 text-xl shadow-glow hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
+              className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-pink-500 hover:bg-pink-600"
+
             >
               Tap to Open 🎁
             </Button>
@@ -120,7 +121,8 @@ const SurpriseBox = ({ onNext }: SurpriseBoxProps) => {
               <Button 
                 onClick={onNext}
                 size="lg"
-                className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-secondary hover:bg-secondary/90"
+               className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-pink-500 hover:bg-pink-600"
+
               >
                 Next → Memories 📸
               </Button>

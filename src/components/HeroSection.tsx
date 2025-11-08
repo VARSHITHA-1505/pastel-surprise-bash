@@ -2,14 +2,26 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import vkraftLogo from "@/assets/vkraft-logo.jpg";
 import videoSparkle from "@/assets/videosparkle.mp4";
+import happybirthday from "@/assets/happybirthday.mp3"; // ✅ add your music here
 
 interface HeroSectionProps {
   onStartSurprise: () => void;
 }
 
 const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
+
+  const handleStart = () => {
+    const audio = document.getElementById("birthday-music") as HTMLAudioElement;
+    if (audio) {
+      audio.volume = 0.6;
+      audio.play();
+    }
+    onStartSurprise();
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+
       {/* Background Video */}
       <video
         autoPlay
@@ -20,10 +32,13 @@ const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
       >
         <source src={videoSparkle} type="video/mp4" />
       </video>
-      
+
+      {/* ✅ Background Music (will play only when button is clicked) */}
+      <audio id="birthday-music" src={happybirthday} loop preload="auto"></audio>
+
       {/* Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-br from-pink-200/60 via-purple-200/60 to-blue-200/60" />
-      
+
       <div className="absolute top-6 left-6 flex items-center gap-3 z-10">
         <img 
           src={vkraftLogo} 
@@ -34,9 +49,10 @@ const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
           VKRAFT
         </span>
       </div>
+
       <div className="max-w-2xl w-full text-center space-y-8 relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-foreground animate-fade-in-up mb-12">
-          🎉 Happy Birthday Surprise 🎀
+          🎉 Happy Birthday DEAR 🎀
         </h1>
         
         <Card className="p-8 md:p-12 shadow-soft animate-float backdrop-blur-sm bg-card/90">
@@ -50,9 +66,10 @@ const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
             </p>
             
             <Button 
-              onClick={onStartSurprise}
+              onClick={handleStart}
               size="lg"
-              className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-primary hover:bg-primary/90"
+              className="mt-6 px-8 py-6 text-lg shadow-glow hover:scale-110 transition-all duration-300 bg-pink-500 hover:bg-pink-600"
+
             >
               Start the Surprise ✨
             </Button>

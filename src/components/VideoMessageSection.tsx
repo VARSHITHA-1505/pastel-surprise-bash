@@ -39,6 +39,10 @@ const VideoMessageSection = ({ onNext }: VideoMessageSectionProps) => {
             <div className="aspect-video bg-gradient-to-br from-purple-100 to-pink-100 flex items-center justify-center rounded-2xl">
               <div className="text-center space-y-4 p-8">
                 <div className="text-6xl animate-bounce-soft">🎥</div>
+                <video controls className="w-full rounded-xl">
+                <source src="/video/video.mp4" type="video/mp4" />
+                 </video>
+
                 <p className="text-xl text-muted-foreground font-quicksand">
                   Video message placeholder
                 </p>
