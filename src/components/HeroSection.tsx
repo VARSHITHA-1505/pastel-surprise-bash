@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import vkraftLogo from "@/assets/vkraft-logo.jpg";
 
 interface HeroSectionProps {
   onStartSurprise: () => void;
@@ -7,7 +8,17 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-12 gradient-pastel">
+    <section className="min-h-screen flex items-center justify-center px-4 py-12 gradient-pastel relative">
+      <div className="absolute top-6 left-6 flex items-center gap-3 z-10">
+        <img 
+          src={vkraftLogo} 
+          alt="VKRAFT Logo" 
+          className="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover shadow-soft"
+        />
+        <span className="text-2xl md:text-3xl font-bold text-foreground">
+          VKRAFT
+        </span>
+      </div>
       <div className="max-w-2xl w-full text-center space-y-8">
         <h1 className="text-5xl md:text-7xl font-bold text-foreground animate-fade-in-up mb-12">
           🎉 Happy Birthday Surprise 🎀

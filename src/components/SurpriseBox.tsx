@@ -10,6 +10,7 @@ interface SurpriseBoxProps {
 
 const SurpriseBox = ({ onNext }: SurpriseBoxProps) => {
   const [isOpened, setIsOpened] = useState(false);
+  const [candleGlow, setCandleGlow] = useState(false);
 
   const handleOpen = () => {
     setIsOpened(true);
@@ -70,6 +71,43 @@ const SurpriseBox = ({ onNext }: SurpriseBoxProps) => {
               <h2 className="text-3xl md:text-4xl font-bold text-primary">
                 🎊 Surprise! 🎊
               </h2>
+              
+              {/* Birthday Cake with Candle */}
+              <div className="relative w-48 h-48 md:w-64 md:h-64 mx-auto mb-6">
+                <div 
+                  className="cursor-pointer"
+                  onClick={() => setCandleGlow(!candleGlow)}
+                >
+                  {/* Cake Base */}
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-40 h-24 md:w-52 md:h-32 bg-gradient-to-b from-pink-300 to-pink-400 rounded-t-3xl shadow-soft">
+                    {/* Frosting waves */}
+                    <div className="absolute -top-3 left-0 right-0 flex justify-around">
+                      {[...Array(7)].map((_, i) => (
+                        <div key={i} className="w-6 h-6 md:w-8 md:h-8 bg-white rounded-full shadow-sm" />
+                      ))}
+                    </div>
+                    {/* Cake layers */}
+                    <div className="absolute top-1/2 left-0 right-0 h-1 bg-pink-500/30" />
+                  </div>
+                  
+                  {/* Candle */}
+                  <div className="absolute bottom-24 md:bottom-32 left-1/2 -translate-x-1/2 w-3 h-12 md:w-4 md:h-16 bg-gradient-to-b from-red-300 to-red-400 rounded-t-sm shadow-sm" />
+                  
+                  {/* Flame with glow effect */}
+                  <div className="absolute bottom-36 md:bottom-48 left-1/2 -translate-x-1/2">
+                    <div 
+                      className={`w-4 h-6 md:w-5 md:h-8 bg-gradient-to-t from-yellow-400 via-orange-400 to-red-500 rounded-full transition-all duration-300 ${
+                        candleGlow 
+                          ? 'animate-bounce-soft shadow-[0_0_30px_10px_rgba(251,191,36,0.8)]' 
+                          : 'shadow-[0_0_10px_3px_rgba(251,191,36,0.5)]'
+                      }`}
+                    />
+                    {candleGlow && (
+                      <div className="absolute inset-0 w-4 h-6 md:w-5 md:h-8 bg-yellow-300 rounded-full blur-md animate-pulse" />
+                    )}
+                  </div>
+                </div>
+              </div>
               
               <p className="text-xl md:text-2xl text-foreground/90 leading-relaxed">
                 Wishing you a day filled with joy, love, and endless smiles 💕
