@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import vkraftLogo from "@/assets/vkraft-logo.jpg";
+import videoSparkle from "@/assets/videosparkle.mp4";
 
 interface HeroSectionProps {
   onStartSurprise: () => void;
@@ -8,7 +9,21 @@ interface HeroSectionProps {
 
 const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 py-12 gradient-pastel relative">
+    <section className="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src={videoSparkle} type="video/mp4" />
+      </video>
+      
+      {/* Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-pink-200/60 via-purple-200/60 to-blue-200/60" />
+      
       <div className="absolute top-6 left-6 flex items-center gap-3 z-10">
         <img 
           src={vkraftLogo} 
@@ -19,7 +34,7 @@ const HeroSection = ({ onStartSurprise }: HeroSectionProps) => {
           VKRAFT
         </span>
       </div>
-      <div className="max-w-2xl w-full text-center space-y-8">
+      <div className="max-w-2xl w-full text-center space-y-8 relative z-10">
         <h1 className="text-5xl md:text-7xl font-bold text-foreground animate-fade-in-up mb-12">
           🎉 Happy Birthday Surprise 🎀
         </h1>
